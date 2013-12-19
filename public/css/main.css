@@ -121,6 +121,29 @@ li button {
     right: 40px;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: .25em 0;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 -1px 10px 3px #ffffff;
+}
+
+footer h6 a {
+    color: #aaa;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+footer h6 a img {
+    position: relative;
+    top: -1px;
+    opacity: .8;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
