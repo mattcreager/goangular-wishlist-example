@@ -102,8 +102,20 @@ aside {
 }
 
     @media (max-height: 900px) {
-        #outer-container{
-            height: 62%;
+        #outer-container {
+            height: 60%;
+        }
+    }
+
+    @media (max-height: 780px) {
+        #outer-container {
+            height: 55%;
+        }
+    }
+
+    @media (max-height: 700px) {
+        #outer-container {
+            height: 50%;
         }
     }
 
@@ -176,7 +188,13 @@ ul {
 
     @media (max-height: 900px) {
         #main-list {
-            height: 62%;
+            height: 60%;
+        }
+    }
+
+    @media (max-height: 780px) {
+        #main-list {
+            height: 47%;
         }
     }
 
