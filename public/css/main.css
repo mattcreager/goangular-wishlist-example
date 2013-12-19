@@ -168,11 +168,17 @@ ul {
 }
 
 #main-list {
-    max-height: 500px;
+    max-height: 75%;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 10px 20px 10px 10px;
 }
+
+    @media (max-height: 900px) {
+        #main-list {
+            height: 62%;
+        }
+    }
 
     #main-list li {
         position: relative;
