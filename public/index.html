@@ -10,28 +10,32 @@
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body ng-controller="ListCtrl">
-    <aside><strong>Tip:</strong> Open this in a second incognito browser</aside>
-    <div id="outer-container">
-      <div id="container">
-        <div id="inner-container">
-          <header>
-            <h1 id="logo">Christmas Wish List</h1>
-            <form ng-submit="addWish()">
-              <input ng-model="wish" placeholder="Add new wish">
-            </form>
-          </header>
-          <div id="main-list">
-            <ul ng-repeat="(key, value) in items">
-              <li>{{value}} <button class="" type="button" ng-click="removeWish(key)">&times;</button></li>
-            </ul>
+    <div class="wrapper">
+      <aside><strong>Tip:</strong> Open this in a second incognito browser</aside>
+      <div class="notice">
+        <h5>We'll show you how this was built tomorrow, so make sure you're <a href="https://goinstant.com/signup" target="_blank">signed up</a> in advance!</h5>
+      </div>
+      <div id="outer-container">
+        <div id="container">
+          <div id="inner-container">
+            <header>
+              <h1 id="logo">Christmas Wish List</h1>
+              <form ng-submit="addWish()">
+                <input ng-model="wish" placeholder="Add new wish">
+              </form>
+            </header>
+            <div id="main-list">
+              <ul ng-repeat="(key, value) in items">
+                <li>{{value}} <button class="" type="button" ng-click="removeWish(key)">&times;</button></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+      <footer>
+       <h6><a title="Get started using GoInstant" href="https://developers.goinstant.com/v1/index.html" target="_blank">Powered by <img src="img/goinstant.png" alt="GoInstant"></a></h6>
+      </footer>
     </div>
-    <footer>
-      <h5>We'll show you how this was built tomorrow, so make sure you're <a href="https://goinstant.com/signup" target="_blank">signed up</a> in advance!</h5>
-      <h6><a title="Get started using GoInstant" href="https://developers.goinstant.com/v1/index.html" target="_blank">Powered by <img src="img/goinstant.png" alt="GoInstant"></a></h6>
-    </footer>
 
     <!-- Dependencies -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>

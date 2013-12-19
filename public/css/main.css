@@ -61,13 +61,13 @@ textarea {
    ========================================================================== */
 
 html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
 
 body {
     position: relative;
-    margin: 0;
-    padding: 0;
     background: url('../img/wood.png');
 }
 
@@ -91,39 +91,24 @@ aside {
     border-bottom: 1px solid rgba(255,255,255,.3);
 }
 
-#outer-container {
-    width: 600px;
-    height: 70%;
-    margin: 0 auto;
-    background: #fff;
-    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.15);
-    border-radius: 6px;
-    overflow: hidden;
+.wrapper {
+    position: relative;
+    min-height: 100%;
 }
 
-    @media (max-height: 900px) {
-        #outer-container {
-            height: 60%;
-        }
-    }
-
-    @media (max-height: 780px) {
-        #outer-container {
-            height: 55%;
-        }
-    }
-
-    @media (max-height: 700px) {
-        #outer-container {
-            height: 50%;
-        }
-    }
+#outer-container {
+    width: 550px;
+    margin: 0 auto;
+    padding-bottom: 150px;
+    border-radius: 6px;
+}
 
 #container {
     position: relative;
     height: 100%;
     padding: 11px;
     background: #C50538;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.15);
 }
 
 #container:before {
@@ -165,7 +150,7 @@ aside {
 h1 {
     margin-bottom: 10px;
     text-align: center;
-    font-size: 2.4em;
+    font-size: 2.2em;
     font-family: 'Abril Fatface', sans-serif;
     color: #4C8F0E;
 }
@@ -180,22 +165,12 @@ ul {
 }
 
 #main-list {
-    max-height: 75%;
-    overflow-y: auto;
     overflow-x: hidden;
-    padding: 10px 20px 10px 10px;
+    padding: 0 20px 10px 10px;
 }
 
-    @media (max-height: 900px) {
-        #main-list {
-            height: 60%;
-        }
-    }
-
-    @media (max-height: 780px) {
-        #main-list {
-            height: 47%;
-        }
+    #main-list ul {
+        margin: .25em 0;
     }
 
     #main-list li {
@@ -272,63 +247,64 @@ form {
         background: #F3F7ED;
     }
 
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding-bottom: 75px;
+.notice {
+    display: block;
+    width: auto;
+    margin: 0 auto;
     text-align: center;
-    background: url('../img/tree.png') repeat-x center 120%;
-
 }
 
-footer h5 {
-    margin: 1em auto;
-    font-size: 1.3em;
+.notice h5 {
+    font-size: 1.25em;
     font-weight: normal;
-    line-height: 1.2;
+    line-height: 1.25;
     color: #7A5436;
-    max-width: 50%;
     font-family: 'Abril Fatface', sans-serif;
     text-shadow: 0 -1px 0 rgba(255,255,255,.2);
     -webkit-font-smoothing: subpixel-antialiased;
 
 }
-    footer h5 a {
+    .notice h5 a {
         color: #4E2E14;
     }
 
-        footer h5 a:hover {
+        .notice h5 a:hover {
             color: green;
         }
 
-footer h6 {
-    margin: .5em 0;
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: url('../img/tree.png') repeat-x center bottom;
 }
 
-footer h6 a {
-    color: #aaa;
-    color: rgba(0,0,0,.4);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all .15s linear;
-}
-
-footer h6 a img {
-    position: relative;
-    top: -1px;
-    transition: all .15s linear;
-}
-    
-    footer h6 a:hover {
-        color: rgba(0,0,0,.6);
+    footer h6 {
+        text-align: center;
     }
 
-    footer h6 a:hover img {
+    footer h6 a {
+        color: #aaa;
+        color: rgba(0,0,0,.4);
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all .15s linear;
+    }
+
+    footer h6 a img {
         position: relative;
+        top: -1px;
+        transition: all .15s linear;
     }
+        
+        footer h6 a:hover {
+            color: rgba(0,0,0,.6);
+        }
+
+        footer h6 a:hover img {
+            position: relative;
+        }
 
 /* ==========================================================================
    Media Queries
