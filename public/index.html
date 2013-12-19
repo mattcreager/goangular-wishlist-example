@@ -5,23 +5,24 @@
 
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Abril+Fatface' rel='stylesheet' type='text/css'>
 
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body ng-controller="ListCtrl">
-    <aside>Tip: open this in a second incognito browser</aside>
+    <aside><strong>Tip:</strong> Open this in a second incognito browser</aside>
     <div id="outer-container">
       <div id="container">
         <div id="inner-container">
           <header>
-            <h1 id="logo">Christmas Wish-List</h1>
+            <h1 id="logo">Christmas Wish List</h1>
             <form ng-submit="addWish()">
-              <input ng-model="wish">
+              <input ng-model="wish" placeholder="Add new wish">
             </form>
           </header>
-          <div>
+          <div id="main-list">
             <ul ng-repeat="(key, value) in items">
-              <li>{{value}} <button class="" type="button" ng-click="removeWish(key)">x</button></li>
+              <li>{{value}} <button class="" type="button" ng-click="removeWish(key)">&times;</button></li>
             </ul>
           </div>
         </div>

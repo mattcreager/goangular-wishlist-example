@@ -60,57 +60,106 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html, body {
+    height: 100%;
+}
+
 body {
-    padding-top: 30px
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: url('../img/wood.png');
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+a, button, input {
+    transition: all .15s ease-in-out;
 }
 
 aside {
-    text-transform: uppercase;
-    line-height: 35px;
-    font-size: 12px;
-    color: #AAA;
-    width: 315px;
-    display: block;
-    margin: 0 auto;
+    margin: 0 auto 40px;
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #7A5436;
+    background: rgba(255,255,255,.2);
+    border-bottom: 1px solid rgba(255,255,255,.3);
 }
 
 #outer-container {
     width: 600px;
+    height: 70%;
     margin: 0 auto;
-    border: 3px solid #20F856;
-    -webkit-box-shadow: -1px -1px 1px rgba(50, 50, 50, 0.35);
-    -moz-box-shadow:    -1px -1px 1px rgba(50, 50, 50, 0.35);
-    box-shadow:         -1px -1px 1px rgba(50, 50, 50, 0.35);
+    background: #fff;
+    box-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    overflow: hidden;
 }
+
+    @media (max-height: 900px) {
+        #outer-container{
+            height: 62%;
+        }
+    }
 
 #container {
     position: relative;
-    padding: 15px;
+    height: 100%;
+    padding: 11px;
+    background: #C50538;
 }
 
 #container:before {
-    background-color: #C50538;
     content: " ";
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: 5px;
     left: 5px;
     right: 5px;
     bottom: 5px;
-    border: 5px solid #C50538;
+    border: 2px dotted #E27474;
+    border-radius: 3px;
 }
 
 #inner-container {
-    background-color: white;
-    padding: 0px 20px;
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border: 5px dotted #C50538;
+    position: relative;
+    height: 100%;
+    padding: 0 10px 10px 20px;
+    background: white url('../img/paper.png');
+    border-radius: 4px;
+    border: 2px solid #C50538;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+    #inner-container:before {
+        content: " ";
+        position: absolute;
+        z-index: 0;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 2px solid #B0DA8A;
+        border-radius: 3px;
+        pointer-events: none;
+    }
+
+h1 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 2.4em;
+    font-family: 'Abril Fatface', sans-serif;
+    color: #4C8F0E;
 }
 
 header {
-    margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 ul {
@@ -118,41 +167,144 @@ ul {
     padding-left: 0;
 }
 
-li {
-    width: 100%;
-    outline: none;
-    border: none;
-    border-bottom: 1px dashed #C50538;
-    font-size: 18px;
+#main-list {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 20px 10px 10px;
 }
 
-li button {
-    position: absolute;
-    right: 40px;
+    #main-list li {
+        position: relative;
+        width: 100%;
+        padding: 5px 35px 1px 10px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        font-size: 23px;
+        font-family: 'Patrick Hand', sans-serif;
+        color: #222;
+        -webkit-mask-image: url('../img/mask.png');
+        -o-mask-image: url('../img/mask.png');
+        -moz-mask-image: url('../img/mask.png');
+        mask-image: url('../img/mask.png');
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+        #main-list li:hover button {
+            opacity: 1;
+        }
+
+
+        #main-list li button {
+            opacity: 0;
+            position: absolute;
+            right: 7px;
+            top: 5px;
+            height: 24px;
+            width: 24px;
+            border: 0;
+            background: #F3E2E2;
+            color: #E27474;
+            border-radius: 50%;
+            line-height: 1;
+            font-size: 17px;
+            padding: 0;
+            padding-bottom: 1px;
+            -webkit-appearance: none;
+        }
+
+            #main-list li button:hover {
+                background: #F3CECE;
+            }
+
+            #main-list li button:active {
+                top: 6px;
+            }
+
+            #main-list li button:focus {
+                outline: 0;
+            }
+
+form {
+    padding: 10px;
 }
+
+
+    form input {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        background: #f7f7f7;
+        border-radius: 3px;
+        font-size: 1.35em;
+        font-family: 'Patrick Hand', sans-serif;
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+
+    form input:focus {
+        outline: 0;
+        border: 1px solid #BBD68A;
+        background: #F3F7ED;
+    }
+
 
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: .25em 0;
-    background-color: #fff;
+    padding-bottom: 75px;
     text-align: center;
-    box-shadow: 0 -1px 10px 3px #ffffff;
+    background: url('../img/tree.png') repeat-x center 120%;
+
+}
+
+footer h5 {
+    margin: 1em auto;
+    font-size: 1.3em;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #7A5436;
+    max-width: 50%;
+    font-family: 'Abril Fatface', sans-serif;
+    text-shadow: 0 -1px 0 rgba(255,255,255,.2);
+    -webkit-font-smoothing: subpixel-antialiased;
+
+}
+    footer h5 a {
+        color: #4E2E14;
+    }
+
+        footer h5 a:hover {
+            color: green;
+        }
+
+footer h6 {
+    margin: .5em 0;
 }
 
 footer h6 a {
     color: #aaa;
+    color: rgba(0,0,0,.4);
     text-decoration: none;
     text-transform: uppercase;
+    transition: all .15s linear;
 }
 
 footer h6 a img {
     position: relative;
     top: -1px;
-    opacity: .8;
+    transition: all .15s linear;
 }
+    
+    footer h6 a:hover {
+        color: rgba(0,0,0,.6);
+    }
+
+    footer h6 a:hover img {
+        position: relative;
+    }
 
 /* ==========================================================================
    Media Queries
