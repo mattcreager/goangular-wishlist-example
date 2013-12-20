@@ -8,6 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Abril+Fatface' rel='stylesheet' type='text/css'>
 
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/vendor/snowfall.min.js"></script>
   </head>
   <body ng-controller="ListCtrl">
     <div class="wrapper">
@@ -46,5 +47,18 @@
     <!-- App -->
     <script src="js/config.js"></script>
     <script src="js/app.js"></script>
+    
+    <!-- Snow because Christmas -->
+    <script>
+      snowFall.snow(document.body, {
+        round: true,
+        shadow: true,
+        minSize: 2,
+        maxSize: 6,
+        maxSpeed: 10,
+        flakeCount: 100,
+        flakeIndex: -1
+      });
+    </script>
   </body>
 </html>
